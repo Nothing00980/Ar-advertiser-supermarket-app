@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/testing/test.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/homescreen.unity
+    guid: 50fcb0290822ff840b68623eb493692a
+  - enabled: 1
+    path: Assets/Scenes/signin.unity
+    guid: 90440028697b96f48853a6c3a6598bfd
+  - enabled: 1
+    path: Assets/Scenes/verify-otp.unity
+    guid: 48d7cad0c718fbc4aac727e385e6c936
+  - enabled: 1
+    path: Assets/Scenes/signup.unity
+    guid: ae9fac97a1d3fe743a820a7094d64418
+  - enabled: 1
+    path: Assets/Scenes/login.unity
+    guid: 39fa91578d8d87f4788d816786e60b4e
+  - enabled: 1
+    path: Assets/Scenes/persistent.unity
+    guid: e21aa82567f1aa445b08a03129e326f1
+  - enabled: 1
+    path: Assets/Scenes/dashboard.unity
+    guid: 064c130574149c940bd2a43840aa9caa
+  - enabled: 1
+    path: Assets/Scenes/account.unity
+    guid: 8b6b6622aa1ae73469aace978ed6cd39
+  - enabled: 1
+    path: Assets/Scenes/barcoderead.unity
+    guid: 7da294868dcb43342b0fee58724163cf
+  - enabled: 1
+    path: Assets/Scenes/Productpage.unity
+    guid: 27e2e7ff97c374249bbf4af86593b28b
+  - enabled: 1
+    path: Assets/Scenes/cartpage.unity
+    guid: f759cf3a308956b4cae102ad5f5be610
+  - enabled: 1
+    path: Assets/Scenes/GOd.unity
+    guid: b5da1aaed4d6ed345a2601d97a8b526a
+  m_configObjects: {}
