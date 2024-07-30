@@ -13,6 +13,13 @@ AR Advertiser is a mobile application designed for small supermarkets to enhance
 - **Order History:** View and manage past purchases.
 
 ## Screenshots -- 
+### Login via otp
+
+
+https://github.com/user-attachments/assets/319e9e02-2a99-4839-8c4f-4933a0072ea2
+
+
+
 
 ## Technologies Used
 
