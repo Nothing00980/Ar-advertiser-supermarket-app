@@ -23,6 +23,10 @@ https://github.com/user-attachments/assets/319e9e02-2a99-4839-8c4f-4933a0072ea2
 
 https://github.com/user-attachments/assets/875a1ca9-0bac-46fc-a17e-af35556d61a8
 
+### Bill generated
+
+[4f4os4o4ytg_doc.pdf](https://github.com/user-attachments/files/16570705/4f4os4o4ytg_doc.pdf)
+
 
 
 
