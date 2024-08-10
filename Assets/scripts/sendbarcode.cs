@@ -69,6 +69,8 @@ public class sendbarcode : MonoBehaviour
 
     public CartList cartList;
 
+    public userdata userdata;
+
 
 
     private void Awake()
@@ -106,6 +108,7 @@ public class sendbarcode : MonoBehaviour
             request.Method = "POST";
             request.ContentType = "application/json";
             request.ContentLength = byteArray.Length;
+            request.Headers.Add("Authorization", "Bearer " + userdata.token);
 
             using (Stream dataStream = request.GetRequestStream())
             {

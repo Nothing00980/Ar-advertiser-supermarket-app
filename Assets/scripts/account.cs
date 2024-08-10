@@ -13,36 +13,38 @@ public class account : MonoBehaviour
     public userdata userdata;
     private string phoneNumber;
 
-    public void Start(){
-          if (PhoneNumberManager.instance == null)
+    public void Start()
     {
-        Debug.LogError("PhoneNumberManager instance is null");
-    }
-    else 
-    {
-        // Retrieve phone number
-         phoneNumber = PhoneNumberManager.instance.phonenumber;
-        Debug.Log("Phone number: " + phoneNumber);
-        phonenum.text = phoneNumber;
-        Debug.Log("text changed to " + phonenum.text);
-    }
+        if (PhoneNumberManager.instance == null)
+        {
+            Debug.LogError("PhoneNumberManager instance is null");
+        }
+        else
+        {
+            // Retrieve phone number
+            phoneNumber = PhoneNumberManager.instance.phonenumber;
+            Debug.Log("Phone number: " + phoneNumber);
+            phonenum.text = phoneNumber;
+            Debug.Log("text changed to " + phonenum.text);
+        }
 
         Debug.Log(userdata.username);
         Debug.Log(userdata.email);
         Debug.Log(userdata.phone);
         username.text = userdata.username;
         email.text = userdata.email;
-        
+
         phonenum.text = userdata.phone;
 
-        if(phonenum.text == ""){
+        if (phonenum.text == "")
+        {
             phonenum.text = phoneNumber;
         }
 
 
     }
 
-     public void Logout()
+    public void Logout()
     {
         // Clear user data by resetting all properties to empty or default values
         userdata.username = "";
@@ -60,5 +62,5 @@ public class account : MonoBehaviour
         SceneManager.LoadScene("signin");
     }
 
-  
+
 }

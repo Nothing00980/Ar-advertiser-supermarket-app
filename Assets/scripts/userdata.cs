@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class userdata : ScriptableObject
 {
-   public string username;
+    public string username;
     public string email;
     public string phone;
     public string userId;
@@ -19,5 +19,12 @@ public class userdata : ScriptableObject
         this.userId = userId;
         this.token = token;
     }
-    
+    public void populateuserdataphone(string phone, string userId, string token)
+    {
+        this.phone = phone;
+        this.userId = userId;
+        this.token = token;
+    }
+
+
 }

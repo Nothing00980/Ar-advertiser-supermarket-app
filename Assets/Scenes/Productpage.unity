@@ -2425,6 +2425,7 @@ MonoBehaviour:
   notify: {fileID: 58520991}
   activeduration: 0.9
   cartList: {fileID: 11400000, guid: 54d2630d0d22c644595062feb3951a2a, type: 2}
+  userdata: {fileID: 11400000, guid: 002ce4d2cc7cd594cb84bd669e7e1854, type: 2}
 --- !u!114 &1369057053
 MonoBehaviour:
   m_ObjectHideFlags: 0

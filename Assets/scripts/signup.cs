@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class signup : MonoBehaviour
 {
-    string url = "http://192.168.224.197:3000/auth/user/signup";
+    string url = "http://localhost:3000/auth/user/signup";
     public TMP_InputField username;
     public TMP_InputField email;
     public TMP_InputField password;
@@ -19,19 +19,21 @@ public class signup : MonoBehaviour
 
 
 
-public void submit(){
-    enteredusername = username.text;
-    enteredemail = email.text;
-    enteredpassword = password.text;
-getworkdone();
+    public void submit()
+    {
+        enteredusername = username.text;
+        enteredemail = email.text;
+        enteredpassword = password.text;
+        getworkdone();
 
-}
+    }
 
-public void getworkdone(){
-    string jsonData = "{ \"username\":\"" + enteredusername + "\",\"email\":\"" + enteredemail + "\",\"password\":\"" + enteredpassword + "\"}";
-     Debug.Log("Sending OTP: " + jsonData);
+    public void getworkdone()
+    {
+        string jsonData = "{ \"username\":\"" + enteredusername + "\",\"email\":\"" + enteredemail + "\",\"password\":\"" + enteredpassword + "\"}";
+        Debug.Log("Sending OTP: " + jsonData);
 
-                  byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(jsonData);
+        byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(jsonData);
 
         Debug.Log(url);
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -49,24 +51,25 @@ public void getworkdone(){
         using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
         {
             if (response.StatusCode == HttpStatusCode.OK)
-                {
-            // Read the response
-            using (Stream responseStream = response.GetResponseStream())
             {
-                StreamReader reader = new StreamReader(responseStream);
-                string responseFromServer = reader.ReadToEnd();
-                Debug.Log(responseFromServer);
-                SceneManager.LoadScene("login");
-                // EditorUtility.DisplayDialog("Warning", responseFromServer, "OK");
+                // Read the response
+                using (Stream responseStream = response.GetResponseStream())
+                {
+                    StreamReader reader = new StreamReader(responseStream);
+                    string responseFromServer = reader.ReadToEnd();
+                    Debug.Log(responseFromServer);
+                    SceneManager.LoadScene("login");
+                    // EditorUtility.DisplayDialog("Warning", responseFromServer, "OK");
 
+                }
+            }
+            else
+            {
+                Debug.LogError("Error: " + response.StatusCode);
             }
         }
-        else{
-             Debug.LogError("Error: " + response.StatusCode);
-        }
-        }
-        
-    
-}
-   
+
+
+    }
+
 }

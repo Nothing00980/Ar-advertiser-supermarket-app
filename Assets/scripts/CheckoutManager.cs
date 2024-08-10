@@ -31,6 +31,15 @@ public class CheckoutManager : MonoBehaviour
 
         downloadButton.onClick.AddListener(OnDownloadButtonClick);
         downloadButton.interactable = false;
+        Debug.Log("these are all the user information needed");
+        Debug.Log(userdata.email + "-- email");
+        Debug.Log(userdata.phone + " -- phone");
+        Debug.Log(userdata.token + "--- token");
+        Debug.Log(userdata.userId + " -- userid");
+        Debug.Log(userdata.username + " --- username");
+
+
+
     }
 
     public void Checkout()
@@ -49,12 +58,14 @@ public class CheckoutManager : MonoBehaviour
                 imagename = item.imagename
             });
         }
+        string contactInfo = !string.IsNullOrEmpty(userdata.phone) ? userdata.phone : userdata.email;
 
         // Create checkout data
         CheckoutData checkoutData = new CheckoutData
         {
             userId = userdata.userId,
             paymentConfirmation = paymentConfirmation,
+            contactInfo = contactInfo,
             cartDetails = cartItems
         };
 
@@ -73,6 +84,9 @@ public class CheckoutManager : MonoBehaviour
             request.uploadHandler = new UploadHandlerRaw(bodyRaw);
             request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("Content-Type", "application/json");
+            request.SetRequestHeader("Authorization", "Bearer " + userdata.token);
+
+
 
             yield return request.SendWebRequest();
 
@@ -171,6 +185,8 @@ public class CheckoutData
 {
     public string userId;
     public string paymentConfirmation;
+    public string contactInfo;
+
     public List<CartItemData> cartDetails;
 }
 
